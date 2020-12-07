@@ -20,16 +20,22 @@ public class MyLinkedList {
 			this.head.setNext(temNode);
 		}
 	}
-	
+
 	public void append(INode newNode) {
-		if(head == null) 
+		if (head == null)
 			this.head = newNode;
-		if(tail == null)
-			this.tail=newNode;
+		if (tail == null)
+			this.tail = newNode;
 		else {
 			this.tail.setNext(newNode);
-			this.tail=newNode;
+			this.tail = newNode;
 		}
+	}
+
+	public void insert(INode myNode, INode newINode) {
+		INode tempNode = myNode.getNext();
+		myNode.setNext(newINode);
+		newINode.setNext(tempNode);
 	}
 
 	public void printMyNodes() {
@@ -44,4 +50,5 @@ public class MyLinkedList {
 		myNodes.append(tempNode.getKey());
 		System.out.println(myNodes);
 	}
+
 }
